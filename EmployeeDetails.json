@@ -1,0 +1,12 @@
+{
+	   "application_Name":"ShoppingCart",
+	   "framework" : "java",
+		  "frontend" : "angular",
+    "employee_Name":"ARAVIND, UPADHYAYA",
+    "employee_ID": 11491,
+    "employee_Email":"11491@hexaware.com" ,
+	"repository_URL":"https://git-codecommit.us-east-1.amazonaws.com/v1/repos/ShoppingCart-11491",
+	"repository_Username":"11491",
+	"repository_Password":"Tsr@11491%%",
+	"start_Date":"23-Sep-21"
+}
