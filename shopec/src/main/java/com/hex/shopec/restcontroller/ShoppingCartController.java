@@ -39,7 +39,7 @@ public class ShoppingCartController {
 	/**
 	 * saveShoppingCart
 	 * @param p_ShoppingCart
-	 * @returnInteger
+	 * @return Integer
 	 */
 	@RequestMapping(value = "/saveShoppingCart", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Integer saveShoppingCart(ShoppingCart p_ShoppingCart) {
