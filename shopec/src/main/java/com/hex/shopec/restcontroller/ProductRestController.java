@@ -28,9 +28,7 @@ public class ProductRestController {
 	 */
 	@RequestMapping(value = "/products", method = RequestMethod.GET, headers = "Accept=application/json")
 	public List<Product> getAllProducts() {
-
 		List<Product> products = productService.getAll();
-
 		return products;
 	}
 }

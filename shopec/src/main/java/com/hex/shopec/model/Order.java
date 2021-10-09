@@ -28,8 +28,6 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	// private Integer shoppingCartid;
-
 	@Column(name = "deliverytype")
 	private String deliveryType;
 
@@ -56,13 +54,6 @@ public class Order {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	/*
-	 * public Integer getShoppingCartid() { return shoppingCartid; }
-	 * 
-	 * public void setShoppingCartid(Integer shoppingCartid) { this.shoppingCartid =
-	 * shoppingCartid; }
-	 */
 
 	public String getDeliveryType() {
 		return deliveryType;

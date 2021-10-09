@@ -1,5 +1,7 @@
 package com.hex.shopec.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
@@ -48,8 +50,8 @@ public class UserDaoImpl implements UserDao {
 	 */
 	@Override
 	public boolean login(User p_loginUser) {
-		getTemplate().findByExample("from User user where user.emailAddress=?" , p_loginUser.getEmailAddress());
-		return true;
+		List<String> userList = getTemplate().findByExample("from User user where user.emailAddress=?" , p_loginUser.getEmailAddress());
+		return null != userList && !userList.isEmpty();
 	}
 
 }

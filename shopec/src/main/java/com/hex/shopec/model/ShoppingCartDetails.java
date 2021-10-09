@@ -26,8 +26,6 @@ public class ShoppingCartDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	// private Integer shoppingCartid;
-
 	@Column(name = "productid")
 	private Integer productId;
 
@@ -51,12 +49,6 @@ public class ShoppingCartDetails {
 		this.id = id;
 	}
 
-	/*
-	 * public Integer getShoppingCartid() { return shoppingCartid; }
-	 * 
-	 * public void setShoppingCartid(Integer shoppingCartid) { this.shoppingCartid =
-	 * shoppingCartid; }
-	 */
 	public Integer getProductId() {
 		return productId;
 	}

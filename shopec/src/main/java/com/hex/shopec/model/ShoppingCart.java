@@ -50,7 +50,6 @@ public class ShoppingCart {
 	private Order order;
 
 	public ShoppingCart() {
-
 	}
 
 	public Integer getId() {
