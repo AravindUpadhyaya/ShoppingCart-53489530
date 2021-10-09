@@ -19,71 +19,6 @@ import { Router } from '@angular/router';
 })
 
 export class ShoppingcartCheckoutComponent implements OnInit {
-  /*private _jsonURL = 'assets/delivery-options.json';
-  public deliveryCodes: string[];
-
-  public ShoppingCartDto: ShoppingCartDto = new ShoppingCartDto();
-  public getItem: string;
-
-  radioSelected: string;
-  public OrderDto: OrderDto = new OrderDto();;
-  // currentItem = "hiiii from parent";
-  constructor(private http: Http, private httpService: HttpClient, private route: ActivatedRoute,
-      private productsDataService: ProductsDataService,private router: Router) {
-  }
-  ngOnInit() {
-
-      this.getItem = this.route.snapshot.queryParamMap.get("ShoppingCartDto");
-      var info = JSON.parse(this.getItem);
-      this.ShoppingCartDto.items = info['items'];
-      this.ShoppingCartDto.grossTotal = info.grossTotal;
-  
-      this.httpService.get('./assets/delivery-options.json').subscribe(
-          data => {
-                 this.deliveryCodes = data as string[];	 // FILL THE ARRAY WITH DATA.
-              //this.deliveryCodes = data;
-              console.log(this.deliveryCodes);
-          },
-          (err: HttpErrorResponse) => {
-              console.log(err.message);
-          }
-      );
-  }
-  onItemChange(item: any) {
-      this.ShoppingCartDto.deliveryOptionCode = item.code;
-      this.ShoppingCartDto.deliveryOptionId = item.id;
-      this.ShoppingCartDto.deliveryTotal = item.deliveryTotal;
-      this.ShoppingCartDto.grossTotal = Number(this.ShoppingCartDto.grossTotal) + Number(item.price);
-      this.ShoppingCartDto.userId = 38558;
-    
-  }
-  btnPurchase() {
-      console.log(JSON.stringify(this.ShoppingCartDto));
-      if (this.ShoppingCartDto.deliveryOptionCode != null) {
-          this.http.post('http://localhost:51350/Order/Create', JSON.stringify(this.ShoppingCartDto), { headers: new Headers({ 'Content-Type': 'application/json' }) }).subscribe(
-              res => {
-                  //const response = res.text();
-                  this.OrderDto.orderNo = res.text();
-
-                  var json = JSON.stringify(this.OrderDto.orderNo);
-                  this.router.navigate(["/orderfinal"], { queryParams: { OrderDto: json }, skipLocationChange: true });
-              }
-          );
-      }
-      else {
-          alert("Please select delivery option"); 
-      }
-     
-
-     
-
-
-  }
- 
-  btnContinueShopping() {
-      this.router.navigate(["/home"]);
-  } */
-
   products: any;
   TotalItemsCout: any = 0;
   deliveryOptions: any;
@@ -121,8 +56,6 @@ export class ShoppingcartCheckoutComponent implements OnInit {
     this.DeliveryOptionID = deliveryoption.id;
     this.DeliveryCode = deliveryoption.code;
     console.log(this.TotalAmount);
-    // console.log(this.TotalAmount.toFixed(2));
-    //this.TotalAmount = Math.round((this.TotalAmount + deliveryoption.price) * 1e12) / 1e12;
     this.TotalGrossAmount = this.SumAmount;
     if (event == "1") {
       this.IsChecked = true;
@@ -145,7 +78,6 @@ export class ShoppingcartCheckoutComponent implements OnInit {
         "grossTotal" : this.TotalGrossAmount,
       "deliveryTotal" : this.DeliveryAmount,
       "itemsTotal" : this.TotalItemsCout,
-      //"userId" : this.UserId,
       "userId" : "1",
       "deliveryOptionId" : this.DeliveryOptionID,
       "deliveryOptionCode" : this.DeliveryCode

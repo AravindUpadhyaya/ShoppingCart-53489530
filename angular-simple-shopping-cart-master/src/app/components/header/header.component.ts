@@ -9,16 +9,11 @@ import { User } from "app/models/user";
 export class HeaderComponent implements OnInit {
  // currentUser: User;
   currentUser: string;
-  constructor() {
-
-   
-      this.currentUser = "Guest";
-
-    
+  constructor() { 
+      this.currentUser = "Guest";   
    }
 
   ngOnInit() {
-    
   }
 
 }

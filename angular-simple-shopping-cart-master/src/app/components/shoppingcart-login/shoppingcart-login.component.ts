@@ -8,12 +8,11 @@ import { ProductsDataService } from 'app/services/products.service';
 })
 export class ShoppingcartLoginComponent implements OnInit {
   @ViewChild('myModal') modal: ElementRef;
-  //@Output() userName: EventEmitter<string> =   new EventEmitter();
   @Output() userName = new EventEmitter<any>();
 
   userEmail:any;
   userPassword:any;
-  //userName :any ="";
+
   IsLoginFailed :boolean = false;
   constructor(private productsService: ProductsDataService) { }
 
@@ -35,14 +34,12 @@ export class ShoppingcartLoginComponent implements OnInit {
   {
     
     this.IsLoginFailed= false;
-    //console.log(this.userEmail +"---"+ this.userPassword);
+
     var body = {
       "userId" :this.userEmail,
       "password" : this.userPassword
     }    
 
-     //this.userName.emit(this.userEmail);
-     //this.modal.nativeElement.style.display = 'none'; 
      this.productsService.AunthenticateLogin(body).subscribe((data)=>{
       this.modal.nativeElement.style.display = 'none'; 
       this.userName.emit(data);
