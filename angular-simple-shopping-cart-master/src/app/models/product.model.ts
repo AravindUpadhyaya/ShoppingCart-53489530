@@ -22,4 +22,41 @@ export class Product {
       return ingredient;
     });*/
   }
+
+} 
+export class ShoppingCartDto{
+  public orderId: string;
+  public userId: number;
+  public deliveryOptionCode: string;
+  public grossTotal: number;
+  public price: any;
+  public deliveryTotal: any;
+  public itemsTotal: any;
+  public deliveryOptionId: any;
+  public items: Array<items> = [];
+ 
+ constructor() {}
 }
+//export class CartItem{
+  export class items {
+    public productId: number;
+      public quantity: number;
+      public price: number;
+      public code: string;
+      public name: string;
+      public description: string;
+  
+    constructor() {}
+  }
+  export class deliveryOption {
+      public id: number;
+      public name: string;
+      public code: string;
+      public description: string;
+      public price: string;
+      constructor() { }
+  }
+  export class OrderDto {
+      public orderNo: string;
+  }
+

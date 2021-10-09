@@ -1,6 +1,4 @@
 package com.hex.shopec.model;
-//CHECKSTYLE:OFF 
-import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,8 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
+/**
+ * 
+ * @author 11491
+ *
+ */
 @Entity
 @Table(name = "Shopping_cart_details")
 @Component

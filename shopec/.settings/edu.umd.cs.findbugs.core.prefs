@@ -1,0 +1,7 @@
+#FindBugs User Preferences
+#Wed Oct 06 22:32:49 EDT 2021
+filter_settings_neg=NOISE|
+filter_settings=Default|BAD_PRACTICE,CORRECTNESS,EXPERIMENTAL,I18N,MALICIOUS_CODE,MT_CORRECTNESS,PERFORMANCE,SECURITY,STYLE|false|15
+effort=max
+detector_threshold=2
+run_at_full_build=false

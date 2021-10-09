@@ -21,6 +21,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { HttpClient } from "@angular/common/http";
 import { HttpClientXsrfModule } from "@angular/common/http";
 import { HttpModule } from "@angular/http";
+import { ShoppingcartLoginComponent } from './components/shoppingcart-login/shoppingcart-login.component';
+import { ShoppingcartOrdernoComponent } from './components/shoppingcart-orderno/shoppingcart-orderno.component';
+import { ShoppingcartCheckoutComponent } from './components/shoppingcart-checkout/shoppingcart-checkout.component';
 
 
 @NgModule({
@@ -30,7 +33,13 @@ import { HttpModule } from "@angular/http";
 
     StoreFrontComponent,
 
-    HeaderComponent
+    HeaderComponent,
+
+    ShoppingcartLoginComponent,
+
+    ShoppingcartOrdernoComponent,
+
+    ShoppingcartCheckoutComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,7 @@
 package com.hex.shopec.model;
-//CHECKSTYLE:OFF 
+
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -14,12 +13,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 import org.springframework.stereotype.Component;
 
+
+/**
+ * 
+ * @author 11491
+ *
+ */
 @Entity
 @Table(name = "Shopping_cart")
 @Component

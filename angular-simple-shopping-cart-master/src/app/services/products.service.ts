@@ -6,8 +6,8 @@ import { Observable } from "rxjs/Observable";
 import { CachcingServiceBase } from "./caching.service";
 
 let count = 0;
-const serverurl = '';// "http://localhost:9090/";
-const productListUrl = "/shopec/GET/products";
+const serverurl = "http://localhost:8080/";
+const productListUrl = "/shopec/products";
 
 @Injectable()
 export class ProductsDataService extends CachcingServiceBase {
@@ -24,5 +24,15 @@ export class ProductsDataService extends CachcingServiceBase {
                                            .get<Product[]>(serverurl + productListUrl)
                                           );
 
+  }
+  
+    AunthenticateLogin(loginDetails) {
+    let url = serverurl + '/account/login';
+    return this.http.post(url, loginDetails);
+  }
+  PurchaseOrder(OrderDetails)
+  {
+    let url = serverurl + '/order';
+    return this.http.post(url, OrderDetails);
   }
 }

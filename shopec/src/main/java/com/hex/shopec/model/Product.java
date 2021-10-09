@@ -1,14 +1,18 @@
 package com.hex.shopec.model;
-//CHECKSTYLE:OFF 
-import java.math.BigDecimal;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
+/**
+ * 
+ * @author 11491
+ *
+ */
 @Entity
 @Table(name = "products")
 @Component

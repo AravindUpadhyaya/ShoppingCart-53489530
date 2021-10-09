@@ -1,5 +1,5 @@
 package com.hex.shopec.model;
-//CHECKSTYLE:OFF
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -15,8 +15,15 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+
+/**
+ * 
+ * @author 11491
+ *
+ */
 @Entity
 @Table(name = "user")
 @Scope("session")
@@ -61,6 +68,7 @@ public class User implements UserDetails {
 		this.id = id;
 	}
 
+	@Override
 	public String getUsername() {
 		return username;
 	}
@@ -69,6 +77,7 @@ public class User implements UserDetails {
 		this.username = username;
 	}
 
+	@Override
 	public String getPassword() {
 		return password;
 	}

@@ -30,6 +30,6 @@ export class StoreFrontComponent implements OnInit {
 
 
   public ngOnInit(): void {
-    this.products = this.productsService.all();
+    //this.products = this.productsService.all();
   }
 }
