@@ -28,8 +28,6 @@ public class OrderRestController {
 	 */
 	@RequestMapping(value = "/saveOrder", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Integer order(@RequestBody Order p_Order) {
-
 		return orderService.order(p_Order);
-
 	}
 }
