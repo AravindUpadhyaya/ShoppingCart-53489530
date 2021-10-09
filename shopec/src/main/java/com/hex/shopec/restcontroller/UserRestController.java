@@ -27,9 +27,7 @@ public class UserRestController {
 	 */
 	@RequestMapping(value = "/saveUser", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Integer saveUser(@RequestBody User p_User) {
-
 		return userService.saveUser(p_User);
-
 	}
 
 	/**
@@ -39,8 +37,6 @@ public class UserRestController {
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET, headers = "Accept=application/json")
 	public Boolean login(@RequestBody User p_User) {
-
 		return userService.login(p_User);
-
 	}
 }

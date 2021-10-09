@@ -1,6 +1,5 @@
 package com.hex.shopec.service;
 
-//CHECKSTYLE:OFF 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
