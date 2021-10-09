@@ -54,5 +54,5 @@ public class ShoppingCartController {
 	@RequestMapping(value = "/saveShoppingCartDetails", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Integer saveShoppingCartDetails(ShoppingCart p_ShoppingCartDetails) {
 		return shoppingCart.saveShoppingCartDetails(p_ShoppingCartDetails);
-	}		
+	}
 }
