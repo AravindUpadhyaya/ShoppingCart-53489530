@@ -27,6 +27,9 @@ public class OrderTest {
 	ShoppingCartDetails shoppingCartdetails;
 	Set<ShoppingCartDetails> shoppingCartSet = new HashSet<ShoppingCartDetails>();
 	
+	/**
+	 * Set up method for test case
+	 */
 	@Before
 	public void setup() {
 		order = new Order();
