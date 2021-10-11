@@ -46,12 +46,11 @@ public class UserDaoImpl implements UserDao {
 	/**
 	 * login
 	 * @param User
-	 * @return boolean
+	 * @return List<User>
 	 */
 	@Override
-	public boolean login(User p_loginUser) {
-		List<String> userList = getTemplate().findByExample("from User user where user.emailAddress=?" , p_loginUser.getEmailAddress());
-		return null != userList && !userList.isEmpty();
+	public List<User> login(User p_loginUser) {		
+		return getTemplate().findByExample(p_loginUser);
 	}
 
 }

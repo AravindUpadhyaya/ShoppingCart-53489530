@@ -1,5 +1,7 @@
 package com.hex.shopec.dao;
 
+import java.util.List;
+
 import com.hex.shopec.model.User;
 
 /**
@@ -8,5 +10,5 @@ import com.hex.shopec.model.User;
  */
 public interface UserDao {	
 	public Integer saveUser(User p_User);
-	public boolean login(User p_loginUser);
+	public List<User> login(User p_loginUser);
 }

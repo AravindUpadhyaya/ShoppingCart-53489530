@@ -1,5 +1,7 @@
 package com.hex.shopec.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +36,11 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	public boolean login(User p_loginUser) {
-		return userDao.login(p_loginUser);
+		if (null == p_loginUser.getEmailAddress()) {
+			return false;
+		}
+		List<User> userList = userDao.login(p_loginUser);
+		return null != userList && !userList.isEmpty();
 	}
 
 }
