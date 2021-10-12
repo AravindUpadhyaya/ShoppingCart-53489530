@@ -27,12 +27,12 @@ export class ProductsDataService extends CachcingServiceBase {
   }
   
     AunthenticateLogin(loginDetails) {
-    let url = serverurl + '/account/login';
+    let url = serverurl + "/account/login";
     return this.http.post(url, loginDetails);
   }
   PurchaseOrder(OrderDetails)
   {
-    let url = serverurl + '/order';
+    let url = serverurl + "/order";
     return this.http.post(url, OrderDetails);
   }
 }

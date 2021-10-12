@@ -7,7 +7,6 @@ export class Product {
   public description: string;
   public price: number;
   public quantity: number;
- // public ingredients: Ingredient[];
 
   public updateFrom(src: Product): void {
     this.id = src.id;
@@ -16,14 +15,8 @@ export class Product {
     this.description = src.description;
     this.price = src.price;
     this.quantity = src.quantity;
-    /*this.ingredients = src.ingredients.map((i) => {
-      let ingredient = new Ingredient();
-      ingredient.updateFrom(i);
-      return ingredient;
-    });*/
   }
-
-} 
+}
 export class ShoppingCartDto{
   public orderId: string;
   public userId: number;
@@ -59,4 +52,3 @@ export class ShoppingCartDto{
   export class OrderDto {
       public orderNo: string;
   }
-

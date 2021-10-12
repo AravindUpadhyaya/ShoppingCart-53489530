@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ShoppingcartCheckoutComponent } from './shoppingcart-checkout.component';
+import { ShoppingcartCheckoutComponent } from "./shoppingcart-checkout.component";
 
-describe('ShoppingcartCheckoutComponent', () => {
+describe("ShoppingcartCheckoutComponent", () => {
   let component: ShoppingcartCheckoutComponent;
   let fixture: ComponentFixture<ShoppingcartCheckoutComponent>;
 
@@ -19,7 +19,7 @@ describe('ShoppingcartCheckoutComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -16,18 +16,12 @@ import { TemplateRef } from "@angular/core/src/linker/template_ref";
 })
 export class StoreFrontComponent implements OnInit {
   public products: Observable<Product[]>;
-  
-  
+
+
   public constructor(private productsService: ProductsDataService,
-                     
-                    private elr:ElementRef) {
+
+    private elr: ElementRef) {
   }
-
-
-
-
-
-
 
   public ngOnInit(): void {
     //this.products = this.productsService.all();

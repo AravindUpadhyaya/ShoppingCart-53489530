@@ -7,7 +7,7 @@ import 'rxjs/add/operator/catch';
 import { HttpErrorResponse } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 
-import { Product, ShoppingCartDto, OrderDto} from '../../models/product.model';
+import { Product, ShoppingCartDto, OrderDto } from '../../models/product.model';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsDataService } from '../../services/products.service';
 import { Router } from '@angular/router';
@@ -25,15 +25,15 @@ export class ShoppingcartCheckoutComponent implements OnInit {
   TotalGrossAmount: any = 0;
   TotalAmount: any = 0;
   DeliveryAmount: any = 0;
-  DeliveryOptionID : any;
-  DeliveryCode:any;
+  DeliveryOptionID: any;
+  DeliveryCode: any;
   SumAmount: number;
   IsChecked: boolean = false;
-  UserId:string ="";
+  UserId: string = "";
   OrderID: any;
   isLoading: boolean = false;
 
-  constructor(private productsService: ProductsDataService,private route: ActivatedRoute, private router: Router, private httpClient: HttpClient) { }
+  constructor(private productsService: ProductsDataService, private route: ActivatedRoute, private router: Router, private httpClient: HttpClient) { }
 
   ngOnInit() {
     this.products = localStorage.getItem('productDetails');
@@ -65,47 +65,46 @@ export class ShoppingcartCheckoutComponent implements OnInit {
   OnCheckout() {
 
     var ItemsJson = [];
-      this.products.forEach(function (item) {
-       
-        ItemsJson.push({
-          "quantity" : item["quantity"],
-          "price" : item["price"],
-          "productId" : item["id"]
-        });
+    this.products.forEach(function (item) {
+
+      ItemsJson.push({
+        "quantity": item["quantity"],
+        "price": item["price"],
+        "productId": item["id"]
       });
-      var body = {
-        "items":ItemsJson,
-        "grossTotal" : this.TotalGrossAmount,
-      "deliveryTotal" : this.DeliveryAmount,
-      "itemsTotal" : this.TotalItemsCout,
-      "userId" : "1",
-      "deliveryOptionId" : this.DeliveryOptionID,
-      "deliveryOptionCode" : this.DeliveryCode
-      }
-      this.isLoading = true;
-      this.productsService.PurchaseOrder(body).subscribe((data)=>{
-        this.isLoading = false;
-        this.openOrderConfirmModal();
-        console.log("OrderId: ", data);
-        this.OrderID = data;
-           },(error) => {
-        this.isLoading = false;
-        window.alert("Failed to place order");
-      });
-    
+    });
+    var body = {
+      "items": ItemsJson,
+      "grossTotal": this.TotalGrossAmount,
+      "deliveryTotal": this.DeliveryAmount,
+      "itemsTotal": this.TotalItemsCout,
+      "userId": "1",
+      "deliveryOptionId": this.DeliveryOptionID,
+      "deliveryOptionCode": this.DeliveryCode
+    }
+    this.isLoading = true;
+    this.productsService.PurchaseOrder(body).subscribe((data) => {
+      this.isLoading = false;
+      this.openOrderConfirmModal();
+      console.log("OrderId: ", data);
+      this.OrderID = data;
+    }, (error) => {
+      this.isLoading = false;
+      window.alert("Failed to place order");
+    });
+
   }
-  ContinueShopping()
-  {
+  ContinueShopping() {
     this.router.navigate(['']);
   }
 
-  openOrderConfirmModal() {   
-    
+  openOrderConfirmModal() {
+
     var modal = document.getElementById("OrderConfirmModal");
     modal.style.display = "block";
   }
   closeOrderConfirmModal() {
     var modal = document.getElementById("OrderConfirmModal");
     modal.style.display = "none";
-  }  
+  }
 }
